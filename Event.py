@@ -1,6 +1,3 @@
-import PriorityQueue
-import BeachLine
-#import DoublyConnectedEdgeList
 import abc
 
 class Event(object):

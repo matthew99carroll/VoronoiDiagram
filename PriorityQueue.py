@@ -3,33 +3,34 @@ class PriorityQueue(object):
         self.heap = []
 
     def Top(self):
-        if self.heap.count > 0:
+        if len(self.heap) > 0:
             return self.heap[0]
         else:
             return None
 
     def Pop(self):
-        if self.heap.Count is 0:
+        if len(self.heap) is 0:
             return None
 
         lastTop = self.heap[0]
 
-        if self.heap.count > 1:
-            lastEvent = self.heap[self.heap.count - 1]
-            SwapIndices(lastTop, lastEvent)
-            self.heap.pop(self.heap.count - 1)
+        if len(self.heap) > 1:
+            lastEvent = self.heap[len(self.heap) - 1]
+            self.SwapIndices(lastTop, lastEvent)
+            self.heap.pop(len(self.heap) - 1)
             self.heap[0] = lastEvent
-            BubbleDown(0)
+            self.BubbleDown(0)
         else:
-            self.heap.pop(self.heap.count - 1)
+            self.heap.pop(len(self.heap) - 1)
 
         return lastTop
 
     def Push(self, eventNode):
-        eventNode.index = self.heap.count
+        eventNode.index = len(self.heap)
         self.heap.append(eventNode)
-        BubbleUp(self.heap.count - 1)
-        print("Inserted event " + eventNode.x + " " + eventNode.y)
+
+        self.BubbleUp(len(self.heap) - 1)
+        print("Inserted event " + str(eventNode.x) + " " + str(eventNode.y))
 
     def IsEmpty(self):
         return False
@@ -47,11 +48,11 @@ class PriorityQueue(object):
         return o1.y > o2.y
 
     def BubbleUp(self, index):
-        while index > 0 and Compare(self.heap[index], self.heap[Parent(index)]):
-            parentIndex = Parent(index)
+        while index > 0 and self.Compare(self.heap[index], self.heap[int(self.Parent(index))]):
+            parentIndex = self.Parent(index)
 
             # Swap this position and indice with its parent
-            SwapIndices(self.heap[index], self.heap[parentIndex])
+            self.SwapIndices(self.heap[index], self.heap[parentIndex])
             t = self.heap[index]
             self.heap[index] = self.heap[parentIndex]
             self.heap[parentIndex] = t
@@ -63,57 +64,57 @@ class PriorityQueue(object):
         e2.index = t
 
     def BubbleDown(self, index):
-        swapIndex = SmallestBetweenRootAndChildren(index)
+        swapIndex = self.SmallestBetweenRootAndChildren(index)
         while swapIndex is not index:
             # Swap this position and indice with the smallest node
-            SwapIndices(self.heap[index], self.heap[swapIndex])
+            self.SwapIndices(self.heap[index], self.heap[swapIndex])
             t = self.heap[index]
             self.heap[index] = self.heap[swapIndex]
             self.heap[swapIndex] = t
 
             index = swapIndex
-            swapIndex = SmallestBetweenRootAndChildren(index)
+            swapIndex = self.SmallestBetweenRootAndChildren(index)
 
     def SmallestBetweenRootAndChildren(self, index):
-        left = Left(index)
-        right = Right(index)
+        left = self.Left(index)
+        right = self.Right(index)
 
         # No child therefore parent is the smallest
-        if left >= self.heap.count:
+        if left >= len(self.heap):
             return index
 
         # Considering only parent and left
-        if right >= self.heap.count:
-            if Compare(self.heap[index], self.heap[left]):
+        if right >= len(self.heap):
+            if self.Compare(self.heap[index], self.heap[left]):
                 return index
             else:
                 return left
 
         # Considering all 3
-        if Compare(self.heap[left], self.heap[right]):
-            if Compare(self.heap[index], self.heap[left]):
+        if self.Compare(self.heap[left], self.heap[right]):
+            if self.Compare(self.heap[index], self.heap[left]):
                 return index
             else:
                 return left
         else:
-            if Compare(self.heap[index], self.heap[right]):
+            if self.Compare(self.heap[index], self.heap[right]):
                 return index
             else:
                 return right
 
     def Delete(self, eventObj):
-        eventInQ = heap[eventObj.index]
+        eventInQ = self.heap[eventObj.index]
         if(eventInQ is not eventObj):
             return False
         
         print("Deleting" + eventObj)
 
-        if (self.heap.count > 1):
-            lastEvent = self.heap[self.heap.count - 1]
-            self.heap.pop(self.heap.count - 1)
+        if (len(self.heap) > 1):
+            lastEvent = self.heap[len(self.heap) - 1]
+            self.heap.pop(len(self.heap) - 1)
             self.heap[eventObj.index] = lastEvent
-            BubbleDown(eventObj.index)
+            self.BubbleDown(eventObj.index)
         else:
-            self.heap.pop(self.heap.count - 1)
+            self.heap.pop(len(self.heap) - 1)
         
         return True

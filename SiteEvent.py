@@ -1,11 +1,14 @@
-import Edge
+from Edge import Edge
+from Event import Event
 
 class SiteEvent(Event):
     def __init__(self, x, y):
         self.face = None
+        self.x = x
+        self.y = y
 
     def Handle(self, queue, beachline, dcel):
-        print("Site Event: " + self)
+        print("Site Event: " + str(self))
         
         above = beachline.GetParabolaFor(self.x, self.y)
 
@@ -18,7 +21,7 @@ class SiteEvent(Event):
 
             # Insert new site's arc under the arc above
             newParabola = beachline.InsertAndSplit(self, above)
-            AddEdgeForTheNewlyCreatedInternalNode(newParabola, dcel)
+            self.AddEdgeForTheNewlyCreatedInternalNode(newParabola, dcel)
 
             # Find consecutive triplets and if exists, add circle events in the queue
             leftSide = beachline.FindTripletOnLeftSide(newParabola)

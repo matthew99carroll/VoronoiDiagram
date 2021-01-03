@@ -1,6 +1,6 @@
-import InternalNode
-import Parabola
-import Triplet
+from InternalNode import InternalNode
+from Parabola import Parabola
+from Triplet import Triplet
 
 class BeachLine(object):
     def __init__(self):
@@ -25,7 +25,7 @@ class BeachLine(object):
         replacer = InternalNode(above.siteEvent, siteEvent, above.parent)
         replacer.left = Parabola(above.siteEvent, replacer)
 
-        subNode = InternalNode(siteEvent, above.SiteEvent, replacer)
+        subNode = InternalNode(siteEvent, above.siteEvent, replacer)
         replacer.right = subNode
 
         newParabola = Parabola(siteEvent, subNode)
@@ -45,10 +45,10 @@ class BeachLine(object):
 
     def FindTripletOnLeftSide(self, parabola):
         # Find the right most leaf node in the left subtree
-        left1 = FindLeftSibling(parabola)
+        left1 = self.FindLeftSibling(parabola)
 
         if left1 is not None:
-            left2 = FindLeftSibling(left1)
+            left2 = self.FindLeftSibling(left1)
             if left2 is not None:
                 return Triplet(left2, left1, parabola)
             else:
@@ -58,10 +58,10 @@ class BeachLine(object):
 
     def FindTripletOnRightSide(self, parabola):
         # Find the right most leaf node in the left subtree
-        right1 = FindRightSibling(parabola)
+        right1 = self.FindRightSibling(parabola)
 
         if right1 is not None:
-            right2 = FindRightSibling(right1)
+            right2 = self.FindRightSibling(right1)
             if right2 is not None:
                 return Triplet(parabola, right1, right2)
             else:

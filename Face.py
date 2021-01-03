@@ -71,3 +71,6 @@ class Face(object):
 
     def BackwardListNotStarted(self):
         return self.backwardList is None
+
+    def CompleteFaceIfIncomplete(self, dcel):
+        return False

@@ -3,25 +3,18 @@ class Edge(object):
     def _edge(self, twin):
         self.twin = twin
 
-    def __init__(self):
-        self.twin = Edge(self)
-
-    def __init__(self, origin):
+    def __init__(self, origin = None, dontCreateTwin = False):
+        if (not dontCreateTwin):
+            self.twin = self._edge(self)
         self.origin = origin
-        self.twin = Edge(self)
-
-    def __init__(self, origin, dontCreateTwin):
-        self.origin = origin
-        if(not dontCreateTwin):
-            self.twin = Edge(self)
 
     def ForFace(self, face):
         if self.face is face:
             return self
         elif self.twin.face is face:
-            return twin
+            return self.twin
         else:
-            return null
+            return None
 
     def ToString(self):
         return "E" + self.face + " " + self.origin

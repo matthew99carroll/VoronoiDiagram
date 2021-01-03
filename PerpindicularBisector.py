@@ -39,7 +39,7 @@ class PerpindicularBisector(object):
             else:
                 y = self.level
                 x = (y-lineEquation.c) / lineEquation.m
-        elif verticalLine:
+        elif self.verticalLine:
             if lineEquation.verticalLine:
                 return None
             elif lineEquation.horizontalLine:

@@ -1,9 +1,10 @@
-import Breakpoint
+from Breakpoint import Breakpoint
+from Node import Node
 import math
 
 class InternalNode(Node):
     def __init__(self, site1, site2, parent):
-        super().__init__(parent)
+        self.parent = parent
         self.site1 = site1
         self.site2 = site2
 
@@ -28,7 +29,7 @@ class InternalNode(Node):
         else:
             rightSide = "Right:" + self.right.SiteToString()
 
-        return SiteToString() + " " + leftSide + " " + rightSide
+        return self.SiteToString() + " " + leftSide + " " + rightSide
     
     def Traverse(self, x, y):
         breakPointX = self.ComputeBreakPointAt(y)
@@ -39,7 +40,7 @@ class InternalNode(Node):
             return self.left
 
     def Contains(self, siteEvent):
-        return site1 is siteEvent or site2 is siteEvent
+        return self.site1 is siteEvent or self.site2 is siteEvent
 
     def OtherChild(self, child):
         if self.left is child:
@@ -124,7 +125,7 @@ class InternalNode(Node):
         d = 2*(self.site2.y-y)
         a2 = 1/d
         b2 = -2*self.site2.x/d
-        c2 = y+d/4+self.site2.x*self.site2.x/d; #minor adjustment
+        c2 = y+d/4+self.site2.x*self.site2.x/d #minor adjustment
 
         a = a1 - a2
         b = b1 - b2
