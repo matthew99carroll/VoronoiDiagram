@@ -1,5 +1,6 @@
 from Node import Node
 
+
 class Parabola(Node):
     def __init__(self, siteEvent, parent):
         self.circleEvent = None

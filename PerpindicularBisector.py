@@ -1,5 +1,6 @@
 import Point
 
+
 class PerpindicularBisector(object):
     def __init__(self, x1, y1, x2, y2):
         self.m = None
@@ -8,20 +9,20 @@ class PerpindicularBisector(object):
         self.verticalLine = False
         self.level = None
 
-        if x1-x2 is 0:
+        if x1 - x2 is 0:
             self.horizontalLine = True
             self.level = (y1 + y2) / 2
-        elif (y1-y2 is 0):
+        elif (y1 - y2 is 0):
             self.verticalLine = True
-            self.level = (x1+x2) / 2
+            self.level = (x1 + x2) / 2
         else:
             # Midpoint
-            mx = (x1+x2) / 2
-            my = (y1+y2) / 2
+            mx = (x1 + x2) / 2
+            my = (y1 + y2) / 2
 
             # Inverse slope
             normalSlope = (y1 - y2) / (x1 - x2)
-            m = -(1/normalSlope)
+            m = -(1 / normalSlope)
 
             # Substitute midpoint to get c
             c = my - self.m * mx
@@ -38,7 +39,7 @@ class PerpindicularBisector(object):
                 return None
             else:
                 y = self.level
-                x = (y-lineEquation.c) / lineEquation.m
+                x = (y - lineEquation.c) / lineEquation.m
         elif self.verticalLine:
             if lineEquation.verticalLine:
                 return None
@@ -51,18 +52,15 @@ class PerpindicularBisector(object):
         else:
             if lineEquation.verticalLine:
                 x = lineEquation.level
-                y = self.m*x + self.c
+                y = self.m * x + self.c
             elif lineEquation.horizontalLine:
                 y = lineEquation.level
-                x = (y-self.c)/self.m
+                x = (y - self.c) / self.m
             else:
                 x = (self.c - lineEquation.c) / (lineEquation.m - self.m)
-                y = self.m*x + self.c
-        
+                y = self.m * x + self.c
+
         return Point(x, y)
 
     def ToString(self):
         return self.left + " " + self.middle + " " + self.right
-
-
-        

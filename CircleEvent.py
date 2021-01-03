@@ -1,6 +1,6 @@
-from Vertex import Vertex
 from Edge import Edge
 from Event import Event
+from Vertex import Vertex
 
 
 class CircleEvent(Event):
@@ -191,10 +191,10 @@ class CircleEvent(Event):
             self.triplet.left.siteEvent.face.AppendToForwardList(convergent)
             self.triplet.right.siteEvent.face.PrependToBackwardList(convergent.twin, vertex)
 
-
     """
     Geometrically only a top vertex event can happen here
     """
+
     def ClipWithTopBounds(self, outside, converger, convergerOnRight, dcel):
         y = dcel.uy
         x = dcel.GetXOfParabolaIntersectionGivenY(self.triplet.left.siteEvent, self.triplet.middle.siteEvent, y)
@@ -241,6 +241,7 @@ class CircleEvent(Event):
     """
         Geometrically only a bottom vertex event can happen here
     """
+
     def ClipWithBottomBounds(self, outside, converger, convergerOnRight, dcel):
 
         # if forward list hasn't started, instantiate and clip with upper bounds

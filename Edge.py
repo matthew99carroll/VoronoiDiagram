@@ -3,7 +3,7 @@ class Edge(object):
     def _edge(self, twin):
         self.twin = twin
 
-    def __init__(self, origin = None, dontCreateTwin = False):
+    def __init__(self, origin=None, dontCreateTwin=False):
         if (not dontCreateTwin):
             self.twin = self._edge(self)
         self.origin = origin

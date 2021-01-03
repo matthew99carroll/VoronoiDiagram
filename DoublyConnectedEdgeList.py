@@ -14,8 +14,12 @@ class DoublyConnectedEdgeList(object):
 
     def GetXOfParabolaIntersectionGivenY(self, site1, site2, y):
         # using the equation of the parabola we find the x by substituting out the directix
-        return (site2.x * site2.x - site1.x * site1.x + site2.y * site2.y - site1.y * site1.y - 2 * site2.y * y + 2 * site1.y * y) / (2 * (site2.x - site1.x))
+        return (
+                           site2.x * site2.x - site1.x * site1.x + site2.y * site2.y - site1.y * site1.y - 2 * site2.y * y + 2 * site1.y * y) / (
+                           2 * (site2.x - site1.x))
 
     def GetYOfParabolaIntersectionGivenX(self, site1, site2, x):
         # using the equation of the parabola we find the y by substituting out the directix
-        return (site1.x * site1.x - site2.x * site2.x + site1.y * site1.y - site2.y * site2.y + 2 * site2.x * x - 2 * site1.x * x) / (2 * (site1.y - site2.y))
+        return (
+                           site1.x * site1.x - site2.x * site2.x + site1.y * site1.y - site2.y * site2.y + 2 * site2.x * x - 2 * site1.x * x) / (
+                           2 * (site1.y - site2.y))

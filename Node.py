@@ -1,8 +1,9 @@
 import abc
 
+
 class Node(object):
     __metaclass__ = abc.ABCMeta
-    
+
     def __init__(self, p):
         parent = p
 

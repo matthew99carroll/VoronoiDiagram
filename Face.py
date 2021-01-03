@@ -33,7 +33,7 @@ class Face(object):
             edge.previous = self.startTerminal
 
         self.startTerminal = edge
-    
+
     def PrependToBackwardList(self, edge, originOfDanglingLast):
         edge.face = self
         edge.next = None

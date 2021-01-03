@@ -1,4 +1,4 @@
-class PriorityQueue(object): 
+class PriorityQueue(object):
     def __init__(self):
         self.heap = []
 
@@ -39,10 +39,10 @@ class PriorityQueue(object):
         return (index - 1) / 2
 
     def Left(self, index):
-        return index*2 + 1
+        return index * 2 + 1
 
     def Right(self, index):
-        return index*2 + 2
+        return index * 2 + 2
 
     def Compare(self, o1, o2):
         return o1.y > o2.y
@@ -104,9 +104,9 @@ class PriorityQueue(object):
 
     def Delete(self, eventObj):
         eventInQ = self.heap[eventObj.index]
-        if(eventInQ is not eventObj):
+        if (eventInQ is not eventObj):
             return False
-        
+
         print("Deleting" + eventObj)
 
         if (len(self.heap) > 1):
@@ -116,5 +116,5 @@ class PriorityQueue(object):
             self.BubbleDown(eventObj.index)
         else:
             self.heap.pop(len(self.heap) - 1)
-        
+
         return True

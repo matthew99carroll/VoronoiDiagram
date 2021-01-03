@@ -1,8 +1,8 @@
-from PriorityQueue import PriorityQueue
 from BeachLine import BeachLine
 from DoublyConnectedEdgeList import DoublyConnectedEdgeList
-from SiteEvent import SiteEvent
 from Face import Face
+from PriorityQueue import PriorityQueue
+from SiteEvent import SiteEvent
 
 # Input
 input = [[20, 80], [40, 60], [20, 30], [70, 70], [60, 50]]

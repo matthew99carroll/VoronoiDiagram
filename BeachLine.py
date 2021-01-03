@@ -2,6 +2,7 @@ from InternalNode import InternalNode
 from Parabola import Parabola
 from Triplet import Triplet
 
+
 class BeachLine(object):
     def __init__(self):
         self.root = None
@@ -13,7 +14,7 @@ class BeachLine(object):
         node = self.root
 
         while not node.IsLeaf():
-            node = node.Traverse(x,y)
+            node = node.Traverse(x, y)
 
         return node
 
@@ -86,9 +87,9 @@ class BeachLine(object):
             return node.parent.left
         else:
             generalNode = node.parent.left
-            while(not generalNode.IsLeaf()):
+            while (not generalNode.IsLeaf()):
                 generalNode = generalNode.right
-            
+
             return generalNode
 
     def FindRightSibling(self, parabola):
@@ -108,9 +109,9 @@ class BeachLine(object):
             return node.parent.right
         else:
             generalNode = node.parent.right
-            while(not generalNode.IsLeaf()):
+            while (not generalNode.IsLeaf()):
                 generalNode = generalNode.left
-            
+
             return generalNode
 
     def ToString(self):

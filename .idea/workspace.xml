@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d8eacc0-3a24-48d3-a200-1563ea866aa5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Voronoi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Voronoi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BeachLine.py" beforeDir="false" afterPath="$PROJECT_DIR$/BeachLine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Breakpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/Breakpoint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CircleEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/CircleEvent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoublyConnectedEdgeList.py" beforeDir="false" afterPath="$PROJECT_DIR$/DoublyConnectedEdgeList.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Edge.py" beforeDir="false" afterPath="$PROJECT_DIR$/Edge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/Event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Face.py" beforeDir="false" afterPath="$PROJECT_DIR$/Face.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InternalNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/InternalNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parabola.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parabola.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PerpindicularBisector.py" beforeDir="false" afterPath="$PROJECT_DIR$/PerpindicularBisector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PriorityQueue.py" beforeDir="false" afterPath="$PROJECT_DIR$/PriorityQueue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SiteEvent.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteEvent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Triplet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Triplet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vertex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vertex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fortunes_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/fortunes_algorithm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
